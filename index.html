@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LJS Landscaping | Professional Landscaper in Abingdon</title>
+    <meta name="description" content="LJS Landscaping - Professional landscaping services in Abingdon, Oxfordshire. Garden design, lawn care, patios, fencing & more. 5-star rated. Call 07535 423318.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* === Hero Animations === */
+        @keyframes kenburns {
+            0%   { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        @keyframes fadeSlideUp {
+            0%   { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50%      { transform: translate(30px, -40px) scale(1.1); }
+        }
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50%      { transform: translate(-20px, 30px) scale(1.05); }
+        }
+        @keyframes accentPulse {
+            0%, 100% { width: 80px;  opacity: 1; }
+            50%      { width: 120px; opacity: .7; }
+        }
+        @keyframes bounceDown {
+            0%, 100% { transform: translateY(0); }
+            50%      { transform: translateY(10px); }
+        }
+        .hero-bg-img { animation: kenburns 20s ease-in-out forwards; }
+        .hero-fade { opacity: 0; animation: fadeSlideUp .9s ease-out forwards; }
+        .hero-fade-d1 { animation-delay: .2s; }
+        .hero-fade-d2 { animation-delay: .5s; }
+        .hero-fade-d3 { animation-delay: .8s; }
+        .hero-fade-d4 { animation-delay: 1.1s; }
+        .accent-line {
+            height: 4px; border-radius: 2px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            animation: accentPulse 3s ease-in-out infinite;
+        }
+        .blob {
+            position: absolute; border-radius: 50%; pointer-events: none;
+            filter: blur(80px); opacity: .25;
+        }
+        .scroll-hint { animation: bounceDown 2s ease-in-out infinite; }
+
+        /* === Scroll Reveal === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* === FAQ Accordion === */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+        }
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
+        }
+        .faq-chevron {
+            transition: transform 0.3s ease;
+        }
+
+        /* === Gallery Hover === */
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* === Section Heading Accent === */
+        .section-accent {
+            width: 60px; height: 4px; border-radius: 2px;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- Header -->
+    <div class="fixed top-0 left-0 w-full z-50 px-4 py-4 transition-all duration-300" id="main-header-container">
+        <header class="max-w-7xl mx-auto bg-white/80 backdrop-blur-lg shadow-lg border border-white/40 rounded-full px-6 py-3 flex justify-between items-center transition-all duration-300" id="main-header">
+            <a href="#" class="text-2xl font-bold text-green-700 tracking-tight"><i class="fas fa-leaf mr-2 text-green-500"></i>LJS Landscaping</a>
+            <!-- Mobile menu button -->
+            <button id="mobileMenuBtn" class="md:hidden text-gray-600 text-2xl focus:outline-none" aria-label="Toggle mobile menu"><i class="fas fa-bars"></i></button>
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="text-gray-600 hover:text-green-700 font-medium transition">About</a>
+                <a href="#services" class="text-gray-600 hover:text-green-700 font-medium transition">Services</a>
+                <a href="#gallery" class="text-gray-600 hover:text-green-700 font-medium transition">Gallery</a>
+                <a href="#reviews" class="text-gray-600 hover:text-green-700 font-medium transition">Reviews</a>
+                <a href="#faq" class="text-gray-600 hover:text-green-700 font-medium transition">FAQ</a>
+                <a href="#contact" class="text-gray-600 hover:text-green-700 font-medium transition">Contact</a>
+                <a href="tel:07535423318" class="bg-green-600 text-white px-5 py-2 rounded-full font-medium hover:bg-green-700 hover:shadow-lg hover:shadow-green-600/30 transition duration-300"><i class="fas fa-phone mr-2"></i>07535 423318</a>
+            </nav>
+        </header>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/95 backdrop-blur-lg border border-white/40 rounded-2xl mt-2 p-4 space-y-3 shadow-xl max-w-7xl mx-auto">
+            <a href="#about" class="block text-gray-600 hover:text-green-700 font-medium py-2">About</a>
+            <a href="#services" class="block text-gray-600 hover:text-green-700 font-medium py-2">Services</a>
+            <a href="#gallery" class="block text-gray-600 hover:text-green-700 font-medium py-2">Gallery</a>
+            <a href="#reviews" class="block text-gray-600 hover:text-green-700 font-medium py-2">Reviews</a>
+            <a href="#faq" class="block text-gray-600 hover:text-green-700 font-medium py-2">FAQ</a>
+            <a href="#contact" class="block text-gray-600 hover:text-green-700 font-medium py-2">Contact</a>
+            <a href="tel:07535423318" class="block bg-green-600 text-white px-5 py-3 rounded-full font-medium text-center hover:bg-green-700 transition"><i class="fas fa-phone mr-2"></i>07535 423318</a>
+        </div>
+    </div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="relative bg-gray-900 text-white min-h-[85vh] sm:min-h-[92vh] flex items-center overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="assets/hero_bg.jpg" alt="LJS Landscaping Beautiful Garden" class="hero-bg-img w-full h-full object-cover">
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900/85 via-gray-900/65 to-green-900/50 sm:from-gray-900/80 sm:via-gray-900/60"></div>
+        <div class="blob w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-green-500 -top-40 -left-40" style="animation: float1 8s ease-in-out infinite;"></div>
+        <div class="blob w-[200px] h-[200px] sm:w-[400px] sm:h-[400px] bg-emerald-400 bottom-0 right-0" style="animation: float2 10s ease-in-out infinite;"></div>
+        <div class="blob w-[150px] h-[150px] sm:w-[300px] sm:h-[300px] bg-lime-400 top-1/2 left-1/2" style="animation: float1 12s ease-in-out infinite;"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 w-full pt-24 pb-16 sm:py-20">
+            <div class="max-w-3xl">
+                <div class="hero-fade hero-fade-d1 inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-5 sm:mb-8">
+                    <div class="flex text-yellow-400 text-xs sm:text-sm gap-0.5">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-white/90 text-xs sm:text-sm font-medium">5.0 &middot; Rated by 9 happy customers</span>
+                </div>
+                <div class="hero-fade hero-fade-d1 accent-line mb-4 sm:mb-6"></div>
+                <h1 class="hero-fade hero-fade-d2 text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 sm:mb-6 leading-[1.1] tracking-tight">
+                    Your Garden,<br>
+                    <span class="bg-gradient-to-r from-green-400 to-emerald-300 bg-clip-text text-transparent">Done Right.</span>
+                </h1>
+                <p class="hero-fade hero-fade-d3 text-base sm:text-lg md:text-xl mb-7 sm:mb-10 max-w-xl text-gray-300 leading-relaxed">
+                    Abingdon's 5-star landscaping team. From tired lawns to dream gardens &mdash; Lee and the lads handle it all. <strong class="text-white">Free site visits, fair prices, no fuss.</strong>
+                </p>
+                <div class="hero-fade hero-fade-d4 flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <a href="#contact" class="group bg-green-600 hover:bg-green-500 text-white font-bold py-3.5 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg transition-all duration-300 shadow-lg shadow-green-600/30 hover:shadow-green-500/40 hover:scale-105 flex items-center justify-center gap-2">
+                        Book a Free Site Visit
+                        <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                    </a>
+                    <a href="tel:07535423318" class="group bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:bg-white hover:text-gray-900 text-white font-bold py-3.5 px-8 sm:py-4 sm:px-10 rounded-full text-base sm:text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-hint text-white/60 flex flex-col items-center gap-1 hidden sm:flex">
+            <span class="text-xs uppercase tracking-widest font-medium">Scroll</span>
+            <i class="fas fa-chevron-down text-lg"></i>
+        </div>
+    </section>
+
+    <!-- ==================== FLOATING STATS BAR ==================== -->
+    <section class="relative z-20 -mt-12 mb-8 px-4">
+        <div class="reveal max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 py-8 px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+                <div class="text-3xl font-extrabold text-green-600 mb-1">5.0 <i class="fas fa-star text-yellow-400 text-xl"></i></div>
+                <div class="text-gray-500 text-sm font-medium">Google Rating</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-green-600 mb-1">24/7</div>
+                <div class="text-gray-500 text-sm font-medium">Always Available</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-green-600 mb-1">100%</div>
+                <div class="text-gray-500 text-sm font-medium">Satisfaction Rate</div>
+            </div>
+            <div>
+                <div class="text-3xl font-extrabold text-green-600 mb-1">Free</div>
+                <div class="text-gray-500 text-sm font-medium">Site Visits & Quotes</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TRANSFORMATION SHOWCASE ==================== -->
+    <section class="py-16 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">See the <span class="text-green-600">Difference</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Drag the slider to see a real LJS garden transformation.</p>
+            </div>
+            
+            <div class="reveal max-w-4xl mx-auto relative rounded-2xl overflow-hidden shadow-2xl h-[300px] sm:h-[400px] md:h-[500px]" id="ba-container">
+                <!-- Before Image (Background) -->
+                <img src="assets/before_garden.jpg" alt="Messy overgrown garden before" class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+                
+                <!-- After Image (Foreground, clipped) -->
+                <div class="absolute inset-0 overflow-hidden border-r-4 border-white shadow-[2px_0_10px_rgba(0,0,0,0.5)]" id="ba-after" style="width: 50%;">
+                    <img src="assets/after_garden.jpg" alt="Clean newly landscaped garden after" class="absolute top-0 left-0 h-full w-[100vw] max-w-[896px] object-cover pointer-events-none" style="width: 896px; max-width: 100vw;" id="ba-after-img">
+                </div>
+
+                <!-- Slider Handle -->
+                <div class="absolute top-0 bottom-0 flex items-center justify-center cursor-ew-resize" id="ba-handle" style="left: 50%; transform: translateX(-50%); width: 40px;">
+                    <div class="w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center text-green-600">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                </div>
+
+                <!-- Labels -->
+                <span class="absolute top-4 left-4 bg-gray-900/70 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm pointer-events-none z-10">AFTER</span>
+                <span class="absolute top-4 right-4 bg-gray-900/70 text-white px-3 py-1 rounded-full text-sm font-bold backdrop-blur-sm pointer-events-none">BEFORE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="section-accent mb-4"></div>
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-6">About <span class="text-green-600">LJS Landscaping</span></h2>
+                    <p class="text-gray-600 mb-5 leading-relaxed text-lg">
+                        LJS Landscaping is run by Lee and his team right here in Abingdon. We're the lads your neighbours recommend &mdash; the ones who show up on time, do what we say we'll do, and leave your garden looking better than you imagined.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-lg">
+                        Whether it's laying a sandstone patio, putting up new fencing, or giving your whole garden a fresh start, we treat every job like it's our own. That's why every single one of our Google reviews is 5 stars.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold border border-green-200">
+                            <i class="fas fa-star text-yellow-400"></i> 5.0 Rated
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold border border-green-200">
+                            <i class="fas fa-clock"></i> 24/7 Available
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold border border-green-200">
+                            <i class="fas fa-shield-halved"></i> Fully Insured
+                        </span>
+                        <span class="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-semibold border border-green-200">
+                            <i class="fas fa-hand-holding-heart"></i> Family Run
+                        </span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="assets/gallery_6.jpg" alt="Garden Transformation by LJS Landscaping" class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]">
+                    <div class="absolute -bottom-4 -left-4 bg-green-600 text-white px-6 py-3 rounded-xl shadow-lg font-bold text-sm">
+                        <i class="fas fa-check-circle mr-2"></i>Garden Transformations
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES ==================== -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">What We <span class="text-green-600">Do</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Everything your garden needs &mdash; done properly, priced fairly.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-pencil-ruler text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Garden Design & Landscaping</h3>
+                    <p class="text-gray-500 leading-relaxed">Got a garden that needs a fresh start? We'll design and build your perfect outdoor space &mdash; from the first sketch to the final plant.</p>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-seedling text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lawn Care & Maintenance</h3>
+                    <p class="text-gray-500 leading-relaxed">Regular mowing, crisp edges, seasonal feeding &mdash; we'll keep your lawn striped, green, and looking the business all year round.</p>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-cut text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Hedge Trimming & Pruning</h3>
+                    <p class="text-gray-500 leading-relaxed">Overgrown hedges? We'll get them shaped up and looking sharp. Regular trimming or a one-off tidy &mdash; we've got you covered.</p>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-border-all text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Patio & Sandstone Paving</h3>
+                    <p class="text-gray-500 leading-relaxed">Indian sandstone, natural stone, or block paving &mdash; we lay patios that last and look stunning. Just ask our customers.</p>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-grip-lines-vertical text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Fencing & Boundaries</h3>
+                    <p class="text-gray-500 leading-relaxed">From 6ft closeboard to decorative panels, we build solid fencing that looks great and stands the test of time.</p>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="reveal group bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl hover:border-green-200 hover:-translate-y-1 transition-all duration-300">
+                    <div class="bg-green-100 text-green-600 w-14 h-14 rounded-xl flex items-center justify-center mb-5 group-hover:bg-green-600 group-hover:text-white transition-colors duration-300">
+                        <i class="fas fa-layer-group text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Turfing & Seeding</h3>
+                    <p class="text-gray-500 leading-relaxed">New turf laid on properly prepared ground, or seeding for the patient gardener. Either way, you'll have a lawn to be proud of.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA BANNER ==================== -->
+    <section class="relative py-20 bg-gradient-to-r from-green-700 via-green-600 to-emerald-500 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="white" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,149.3C672,139,768,149,864,170.7C960,192,1056,224,1152,218.7C1248,213,1344,171,1392,149.3L1440,128L1440,320L0,320Z"></path></svg>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Let's Get Your Garden Sorted</h2>
+            <p class="text-xl text-green-100 mb-10 max-w-2xl mx-auto">Give us a call or drop us a message &mdash; we'll pop round, have a look, and give you an honest quote. No charge, no pressure.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="group bg-white text-green-700 font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center justify-center gap-2">
+                    Book a Free Site Visit <i class="fas fa-arrow-right transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+                <a href="tel:07535423318" class="bg-transparent border-2 border-white hover:bg-white hover:text-green-700 text-white font-bold py-4 px-10 rounded-full text-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fas fa-phone"></i> 07535 423318
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== GALLERY ==================== -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">See the <span class="text-green-600">Results</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Real projects, real gardens, real happy customers across Abingdon and Oxfordshire.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_1.jpg" alt="Striped lawn by LJS Landscaping" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Lawn Care</span>
+                    </div>
+                </div>
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_2.jpg" alt="Sandstone patio installation" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Sandstone Patio</span>
+                    </div>
+                </div>
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_3.jpg" alt="Hedge trimming by LJS" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Hedge Trimming</span>
+                    </div>
+                </div>
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_4.jpg" alt="Flower bed planting" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Planting & Borders</span>
+                    </div>
+                </div>
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_5.jpg" alt="Close-board fencing" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Fencing</span>
+                    </div>
+                </div>
+                <div class="reveal gallery-item relative rounded-2xl overflow-hidden shadow-md cursor-pointer group">
+                    <img loading="lazy" src="assets/gallery_6.jpg" alt="Garden transformation before and after" class="w-full h-64 object-cover transition-transform duration-500">
+                    <div class="gallery-overlay absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg">Garden Transformation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY CHOOSE US ==================== -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why People <span class="text-green-600">Choose Us</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">It's simple &mdash; we do good work, we're fair on price, and we're nice to have around.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="reveal text-center bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-sterling-sign text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Free Site Visits</h3>
+                    <p class="text-gray-500 text-sm">We'll come to you, have a look at the job, and give you a straight-up price. No cost, no catch.</p>
+                </div>
+                <div class="reveal text-center bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-shield-halved text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Fully Insured</h3>
+                    <p class="text-gray-500 text-sm">Full public liability insurance &mdash; so you can relax while we get on with the work.</p>
+                </div>
+                <div class="reveal text-center bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-heart text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Local & Trusted</h3>
+                    <p class="text-gray-500 text-sm">We live and work in Abingdon. Chances are, we've already done a job on your street.</p>
+                </div>
+                <div class="reveal text-center bg-white rounded-2xl p-8 shadow-md border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-green-100 text-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-5">
+                        <i class="fas fa-clock text-3xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">24/7 Available</h3>
+                    <p class="text-gray-500 text-sm">Early mornings, evenings, weekends &mdash; we'll work around your schedule, not the other way round.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS ==================== -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Straight From Our <span class="text-green-600">Customers</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Every single Google review &mdash; 5 stars. Here's what people are saying.</p>
+            </div>
+            <!-- Carousel Container -->
+            <div class="relative overflow-hidden reveal pb-12" id="testimonial-carousel">
+                <div class="flex transition-transform duration-500 ease-out" id="testimonial-track">
+                    <!-- Review 1 - Sam Rhodes -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"Lee and the team are absolutely fantastic. So friendly and professional. We are so pleased with their work and always showed up on time. Very reliable and very hardworking. Would 100% recommend 👍🏻"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold">S</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Sam Rhodes</div>
+                                    <div class="text-gray-400 text-sm">Local Guide</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 - Derek Pooley -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"We used LJS to reshape our back garden, better to cope with new construction behind us. They did an excellent job and we're delighted with the result. Lee and Alec were a pleasure to have around. Definitely recommend."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-emerald-600 rounded-full flex items-center justify-center text-white font-bold">D</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Derek Pooley</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 - Alex Chamberlain -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"The Guys at LJS came in to replace a damaged fence and replaced it with 6ft closeboard, while here they also got rid of an old dangerously slippy decking area they replaced with a nice sandstone patio, all work was carried out to an excellent standard and fairly priced. Highly recommend."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold">A</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Alex Chamberlain</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 4 - Tracey Vangucci -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"Have used these lads on numerous occasions from replacing fencing, to laying my beautiful patio. They have always been very friendly and on time and their work has always been great. Would definitely recommend this company 5🌟"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-violet-600 rounded-full flex items-center justify-center text-white font-bold">T</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Tracey Vangucci</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 5 - Stella Collins -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"Lee and Alex totally transformed my garden to one I'm very proud of. Great guys who do what they say they will and deliver an outstanding service. Thanks both!"</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center text-white font-bold">S</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Stella Collins</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 6 - Owen Bound -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"I recently had some Indian sandstone laid along with a new turfed area. I'm really happy with the work and how friendly they were. Would definitely recommend."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center text-white font-bold">O</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Owen Bound</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 7 - Lisa O'Keefe -->
+                    <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100 shadow-sm h-full flex flex-col relative">
+                            <i class="fas fa-quote-left text-green-200 text-4xl absolute top-6 right-6"></i>
+                            <div class="flex text-yellow-400 mb-4 gap-0.5">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-gray-600 leading-relaxed mb-6 flex-grow">"Did a bit of work in my garden for me, done a fantastic job 10/10 would use again."</p>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center text-white font-bold">L</div>
+                                <div>
+                                    <div class="font-bold text-gray-900">Lisa O'Keefe</div>
+                                    <div class="text-gray-400 text-sm">Verified Customer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="flex justify-center gap-4 mt-8">
+                    <button id="testPrev" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition shadow-sm flex items-center justify-center focus:outline-none" aria-label="Previous review"><i class="fas fa-arrow-left"></i></button>
+                    <button id="testNext" class="w-12 h-12 rounded-full bg-white border border-gray-200 text-gray-600 hover:bg-green-600 hover:text-white hover:border-green-600 transition shadow-sm flex items-center justify-center focus:outline-none" aria-label="Next review"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICE AREAS ==================== -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Areas <span class="text-green-600">We Cover</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Based in Abingdon, working across Oxfordshire. If you're nearby, we can help.</p>
+            </div>
+            <div class="reveal flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default"><i class="fas fa-map-pin text-green-500 mr-2"></i>Abingdon</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Didcot</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Wantage</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Wallingford</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Oxford</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Witney</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Faringdon</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Grove</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Marcham</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Drayton</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Steventon</span>
+                <span class="bg-white border border-green-200 text-gray-700 px-5 py-2.5 rounded-full font-medium shadow-sm hover:bg-green-600 hover:text-white hover:border-green-600 transition-all duration-300 cursor-default">Sutton Courtenay</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ ==================== -->
+    <section id="faq" class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked <span class="text-green-600">Questions</span></h2>
+            </div>
+            <div class="space-y-4 reveal">
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>Do you charge for quotes or site visits?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Not a penny. We'll come out, have a look at what needs doing, and give you a price on the spot &mdash; completely free.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>What areas do you cover?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">We're based in Abingdon and cover most of Oxfordshire &mdash; Didcot, Wantage, Wallingford, Oxford, Witney, Faringdon, and all the villages in between. Not sure if we cover your area? Just give us a ring.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>Are you fully insured?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Yes &mdash; we carry full public liability insurance on every job. Your property is in safe hands.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>What services do you offer?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Pretty much everything your garden needs &mdash; design and landscaping, lawn care, hedge trimming, patios, fencing, turfing, and full garden makeovers. If it's outdoors, we can probably help.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>Do you work evenings and weekends?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Yes! We know life's busy, so we're happy to work around you. Early starts, evening finishes, weekends &mdash; whatever works best.</p>
+                    </div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-green-300 transition-colors">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left font-semibold text-gray-900 hover:text-green-700 transition-colors">
+                        <span>How do I get started?</span>
+                        <i class="fas fa-chevron-down faq-chevron text-green-500"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-0">
+                        <p class="text-gray-600 leading-relaxed pb-6">Easy &mdash; just call us on 07535 423318 or fill in the form below. We'll have a quick chat, arrange a time to come and see the job, and get you a quote. No pressure, no hard sell.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14 reveal">
+                <div class="section-accent mx-auto mb-4"></div>
+                <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Get In <span class="text-green-600">Touch</span></h2>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto">Drop us a message or give Lee a call &mdash; we'd love to hear about your project.</p>
+            </div>
+            <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Contact Form -->
+                <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 md:p-10">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Request a Free Site Visit</h3>
+                    <form action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-5">
+                        <!-- Note: Replace 'your_formspree_id' with actual Formspree endpoint -->
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-700 mb-1.5">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Smith" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-1.5">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="07xxx xxxxxx" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-gray-700 mb-1.5">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-700 mb-1.5">Your Message</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell us about your project..." class="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-green-600/20 flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info + Map -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start gap-4">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Address</h4>
+                                    <p class="text-gray-600">30 Fieldside, Abingdon, OX14 1JT</p>
+                                    <a href="https://maps.google.com/?q=30+Fieldside,+Abingdon+OX14+1JT" target="_blank" class="text-green-600 hover:underline text-sm font-medium mt-1 inline-block">Get Directions <i class="fas fa-external-link-alt text-xs ml-1"></i></a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Phone</h4>
+                                    <a href="tel:07535423318" class="text-gray-600 hover:text-green-700 text-lg font-medium">07535 423318</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="bg-green-100 text-green-600 w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Hours</h4>
+                                    <p class="text-green-600 font-semibold">Open 24 hours</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Google Map -->
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.5!2d-1.2816!3d51.6712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876c18f8e8e6fcb%3A0x0!2s30+Fieldside%2C+Abingdon+OX14+1JT!5e0!3m2!1sen!2suk!4v1"
+                            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            title="LJS Landscaping Location">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand -->
+                <div>
+                    <div class="text-2xl font-bold text-green-500 mb-4"><i class="fas fa-leaf mr-2"></i>LJS Landscaping</div>
+                    <p class="text-gray-400 leading-relaxed mb-6">Abingdon's 5-star landscaping team. Gardens designed, built, and maintained &mdash; the way you want them.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-800 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="bg-gray-800 hover:bg-green-600 w-10 h-10 rounded-full flex items-center justify-center text-gray-400 hover:text-white transition-all duration-300"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Garden Design</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Lawn Care</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Hedge Trimming</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Patios & Paving</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Fencing</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-green-400 transition flex items-center gap-2"><i class="fas fa-chevron-right text-xs text-green-600"></i> Turfing & Seeding</a></li>
+                    </ul>
+                </div>
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Contact Us</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-gray-400">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1"></i>
+                            <span>30 Fieldside, Abingdon<br>OX14 1JT</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-green-500"></i>
+                            <a href="tel:07535423318" class="text-gray-400 hover:text-green-400 transition">07535 423318</a>
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-400">
+                            <i class="fas fa-clock text-green-500"></i>
+                            <span>Open 24 hours</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-500 text-sm">&copy; 2026 LJS Landscaping. All rights reserved.</p>
+                <a href="#" class="text-gray-500 hover:text-green-400 text-sm font-medium transition flex items-center gap-2">
+                    Back to top <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== LIGHTBOX MODAL ==================== -->
+    <div id="lightbox" class="fixed inset-0 z-[60] bg-black/90 hidden flex justify-center items-center opacity-0 transition-opacity duration-300">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-green-400 text-4xl focus:outline-none transition-colors" aria-label="Close lightbox">&times;</button>
+        <img id="lightbox-img" src="" alt="Gallery Image Fullscreen" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script>
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, index * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                // Toggle clicked
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+
+        // Mobile Menu
+        const mobileBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Sticky Header Scroll
+        const headerContainer = document.getElementById('main-header-container');
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                headerContainer.classList.remove('py-4');
+                headerContainer.classList.add('py-2');
+                header.classList.add('bg-white/95', 'shadow-xl');
+                header.classList.remove('bg-white/80', 'shadow-lg');
+            } else {
+                headerContainer.classList.add('py-4');
+                headerContainer.classList.remove('py-2');
+                header.classList.remove('bg-white/95', 'shadow-xl');
+                header.classList.add('bg-white/80', 'shadow-lg');
+            }
+        });
+
+        // Before/After Slider
+        const baContainer = document.getElementById('ba-container');
+        if (baContainer) {
+            const baAfter = document.getElementById('ba-after');
+            const baHandle = document.getElementById('ba-handle');
+            let isDragging = false;
+            
+            const startDrag = (e) => { isDragging = true; };
+            const stopDrag = () => { isDragging = false; };
+            const moveDrag = (e) => {
+                if (!isDragging) return;
+                let x = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
+                let rect = baContainer.getBoundingClientRect();
+                let percentage = ((x - rect.left) / rect.width) * 100;
+                percentage = Math.max(0, Math.min(100, percentage));
+                baAfter.style.width = percentage + '%';
+                baHandle.style.left = percentage + '%';
+            };
+            
+            baContainer.addEventListener('mousedown', startDrag);
+            baContainer.addEventListener('touchstart', startDrag, {passive: true});
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('mousemove', moveDrag);
+            window.addEventListener('touchmove', moveDrag, {passive: true});
+        }
+
+        // Gallery Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const img = item.querySelector('img').src;
+                lightboxImg.src = img;
+                lightbox.classList.remove('hidden');
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightboxImg.classList.remove('scale-95');
+                    lightboxImg.classList.add('scale-100');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // prevent scrolling
+            });
+        });
+        
+        const closeLightbox = () => {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.add('scale-95');
+            lightboxImg.classList.remove('scale-100');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 300);
+        };
+        
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeLightbox();
+        });
+
+        // Testimonial Carousel
+        const testTrack = document.getElementById('testimonial-track');
+        if (testTrack) {
+            const testPrev = document.getElementById('testPrev');
+            const testNext = document.getElementById('testNext');
+            const cards = testTrack.children;
+            let currentIndex = 0;
+            
+            const updateCarousel = () => {
+                const width = window.innerWidth;
+                let visible = 1;
+                if(width >= 768) visible = 2;
+                if(width >= 1024) visible = 3;
+                
+                const maxIndex = cards.length - visible;
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+                if (currentIndex < 0) currentIndex = 0;
+                
+                let cardWidth = 100;
+                if(visible === 2) cardWidth = 50;
+                if(visible === 3) cardWidth = 33.33333;
+                
+                testTrack.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+            };
+            
+            testNext.addEventListener('click', () => {
+                const width = window.innerWidth;
+                let visible = 1;
+                if(width >= 768) visible = 2;
+                if(width >= 1024) visible = 3;
+                const maxIndex = cards.length - visible;
+                
+                if (currentIndex < maxIndex) currentIndex++;
+                updateCarousel();
+            });
+            
+            testPrev.addEventListener('click', () => {
+                if (currentIndex > 0) currentIndex--;
+                updateCarousel();
+            });
+            
+            // Touch Swipe Support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            testTrack.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                clearInterval(autoPlay); // pause auto-play on touch
+            }, {passive: true});
+            
+            testTrack.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, {passive: true});
+            
+            const handleSwipe = () => {
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) { // minimum swipe distance
+                    if (diff > 0) {
+                        // Swiped left (next)
+                        const width = window.innerWidth;
+                        let visible = 1;
+                        if(width >= 768) visible = 2;
+                        if(width >= 1024) visible = 3;
+                        const maxIndex = cards.length - visible;
+                        if (currentIndex < maxIndex) currentIndex++;
+                    } else {
+                        // Swiped right (prev)
+                        if (currentIndex > 0) currentIndex--;
+                    }
+                    updateCarousel();
+                }
+            };
+            
+            window.addEventListener('resize', updateCarousel);
+            
+            // Auto-play
+            let autoPlay = setInterval(() => {
+                const width = window.innerWidth;
+                let visible = 1;
+                if(width >= 768) visible = 2;
+                if(width >= 1024) visible = 3;
+                const maxIndex = cards.length - visible;
+                
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 5000);
+            
+            // Pause on hover
+            document.getElementById('testimonial-carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
+        }
+    </script>
+
+</body>
+</html>
